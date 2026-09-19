@@ -85,4 +85,22 @@ for alid, title, aid, year, lid in albums:
         g.add((uri, EX.recordLabel, label_uri[lid]))
     album_uri[alid] = uri
 
-print(len(g))
+songs = [
+    ("song_xtalcal",       "Xtal",              "artist_aphextwin", "album_selectedambient", 268),
+    ("song_tha",           "Tha",               "artist_aphextwin", "album_selectedambient", 574),
+    ("song_lfo_track",     "LFO",               "artist_lfo",       "album_frequencies",      316),
+    ("song_mentaldread",   "Mental Dread",       "artist_lfo",       "album_frequencies",      248),
+    ("song_chime",         "Chime",             "artist_orbital",   "album_orbital1",         410),
+    ("song_midnight",      "Midnight",          "artist_orbital",   "album_orbital1",         362),
+    ("song_pacman",        "Pacman",            "artist_808state",  "album_exel8",            265),
+    ("song_cubik",         "Cubik",             "artist_808state",  "album_exel8",            300),
+    ("song_spastik",       "Spastik",           "artist_plastikman", None, 391),   # сингл, без альбому
+    ("song_koma",          "Koma",              "artist_plastikman", None, 420),   # сингл, без альбому
+]
+
+for sid, title, aid, alid, duration in songs:
+    uri = add_entity(sid, SCHEMA.MusicRecording, title)
+    g.add((uri, EX.performedBy, artist_uri[aid]))
+    g.add((uri, EX.duration, Literal(duration, datatype=XSD.integer)))
+    if alid is not None:
+        g.add((album_uri[alid], EX.hasTrack, uri))
