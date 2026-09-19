@@ -36,3 +36,24 @@ def add_entity(local_id, rdf_type, label):
     g.add((uri, RDFS.label, Literal(label, lang="uk")))
     g.add((uri, SCHEMA.name, Literal(label)))
     return uri
+
+genres = {
+    "genre_acidhouse": "Acid House",
+    "genre_techno":    "Techno",
+    "genre_ambient":   "Ambient",
+    "genre_breakbeat": "Breakbeat",
+}
+genre_uri = {}
+
+for gid, name in genres.items():
+    genre_uri[gid] = add_entity(gid, EX.Genre, name)
+
+labels = {
+    "label_warp":   "Warp Records",
+    "label_rs":     "R&S Records",
+    "label_mute":   "Mute Records",
+}
+label_uri = {}
+
+for lid, name in labels.items():
+    label_uri[lid] = add_entity(lid, EX.RecordLabel, name)
