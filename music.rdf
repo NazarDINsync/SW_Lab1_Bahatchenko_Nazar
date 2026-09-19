@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF
+   xmlns:ex="http://example.org/music/"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+   xmlns:schema1="http://schema.org/"
+>
+  <rdf:Description rdf:about="http://example.org/music/artist_orbital">
+    <rdf:type rdf:resource="http://schema.org/MusicGroup"/>
+    <rdfs:label xml:lang="uk">Orbital</rdfs:label>
+    <schema1:name>Orbital</schema1:name>
+    <ex:hasGenre rdf:resource="http://example.org/music/genre_techno"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/music/song_tha">
+    <rdf:type rdf:resource="http://schema.org/MusicRecording"/>
+    <rdfs:label xml:lang="uk">Tha</rdfs:label>
+    <schema1:name>Tha</schema1:name>
+    <ex:performedBy rdf:resource="http://example.org/music/artist_aphextwin"/>
+    <ex:duration rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">574</ex:duration>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/music/genre_acidhouse">
+    <rdf:type rdf:resource="http://example.org/music/Genre"/>
+    <rdfs:label xml:lang="uk">Acid House</rdfs:label>
+    <schema1:name>Acid House</schema1:name>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/music/artist_808state">
+    <rdf:type rdf:resource="http://schema.org/MusicGroup"/>
+    <rdfs:label xml:lang="uk">808 State</rdfs:label>
+    <schema1:name>808 State</schema1:name>
+    <ex:hasGenre rdf:resource="http://example.org/music/genre_acidhouse"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/music/song_spastik">
+    <rdf:type rdf:resource="http://schema.org/MusicRecording"/>
+    <rdfs:label xml:lang="uk">Spastik</rdfs:label>
+    <schema1:name>Spastik</schema1:name>
+    <ex:performedBy rdf:resource="http://example.org/music/artist_plastikman"/>
+    <ex:duration rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">391</ex:duration>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/music/artist_plastikman">
+    <rdf:type rdf:resource="http://schema.org/MusicGroup"/>
+    <rdfs:label xml:lang="uk">Plastikman</rdfs:label>
+    <schema1:name>Plastikman</schema1:name>
+    <ex:hasGenre rdf:resource="http://example.org/music/genre_techno"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/music/artist_lfo">
+    <rdf:type rdf:resource="http://schema.org/MusicGroup"/>
+    <rdfs:label xml:lang="uk">LFO</rdfs:label>
+    <schema1:name>LFO</schema1:name>
+    <ex:hasGenre rdf:resource="http://example.org/music/genre_breakbeat"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/music/song_midnight">
+    <rdf:type rdf:resource="http://schema.org/MusicRecording"/>
+    <rdfs:label xml:lang="uk">Midnight</rdfs:label>
+    <schema1:name>Midnight</schema1:name>
+    <ex:performedBy rdf:resource="http://example.org/music/artist_orbital"/>
+    <ex:duration rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">362</ex:duration>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/music/genre_techno">
+    <rdf:type rdf:resource="http://example.org/music/Genre"/>
+    <rdfs:label xml:lang="uk">Techno</rdfs:label>
+    <schema1:name>Techno</schema1:name>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/music/label_rs">
+    <rdf:type rdf:resource="http://example.org/music/RecordLabel"/>
+    <rdfs:label xml:lang="uk">R&amp;S Records</rdfs:label>
+    <schema1:name>R&amp;S Records</schema1:name>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/music/label_warp">
+    <rdf:type rdf:resource="http://example.org/music/RecordLabel"/>
+    <rdfs:label xml:lang="uk">Warp Records</rdfs:label>
+    <schema1:name>Warp Records</schema1:name>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/music/song_pacman">
+    <rdf:type rdf:resource="http://schema.org/MusicRecording"/>
+    <rdfs:label xml:lang="uk">Pacman</rdfs:label>
+    <schema1:name>Pacman</schema1:name>
+    <ex:performedBy rdf:resource="http://example.org/music/artist_808state"/>
+    <ex:duration rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">265</ex:duration>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/music/album_orbital1">
+    <rdf:type rdf:resource="http://schema.org/MusicAlbum"/>
+    <rdfs:label xml:lang="uk">Orbital (Green Album)</rdfs:label>
+    <schema1:name>Orbital (Green Album)</schema1:name>
+    <ex:releasedBy rdf:resource="http://example.org/music/artist_orbital"/>
+    <schema1:datePublished rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1991</schema1:datePublished>
+    <ex:recordLabel rdf:resource="http://example.org/music/label_rs"/>
+    <ex:hasTrack rdf:resource="http://example.org/music/song_chime"/>
+    <ex:hasTrack rdf:resource="http://example.org/music/song_midnight"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/music/song_xtalcal">
+    <rdf:type rdf:resource="http://schema.org/MusicRecording"/>
+    <rdfs:label xml:lang="uk">Xtal</rdfs:label>
+    <schema1:name>Xtal</schema1:name>
+    <ex:performedBy rdf:resource="http://example.org/music/artist_aphextwin"/>
+    <ex:duration rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">268</ex:duration>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/music/album_selectedambient">
+    <rdf:type rdf:resource="http://schema.org/MusicAlbum"/>
+    <rdfs:label xml:lang="uk">Selected Ambient Works 85-92</rdfs:label>
+    <schema1:name>Selected Ambient Works 85-92</schema1:name>
+    <ex:releasedBy rdf:resource="http://example.org/music/artist_aphextwin"/>
+    <schema1:datePublished rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1992</schema1:datePublished>
+    <ex:recordLabel rdf:resource="http://example.org/music/label_warp"/>
+    <ex:hasTrack rdf:resource="http://example.org/music/song_xtalcal"/>
+    <ex:hasTrack rdf:resource="http://example.org/music/song_tha"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/music/song_mentaldread">
+    <rdf:type rdf:resource="http://schema.org/MusicRecording"/>
+    <rdfs:label xml:lang="uk">Mental Dread</rdfs:label>
+    <schema1:name>Mental Dread</schema1:name>
+    <ex:performedBy rdf:resource="http://example.org/music/artist_lfo"/>
+    <ex:duration rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">248</ex:duration>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/music/genre_ambient">
+    <rdf:type rdf:resource="http://example.org/music/Genre"/>
+    <rdfs:label xml:lang="uk">Ambient</rdfs:label>
+    <schema1:name>Ambient</schema1:name>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/music/genre_breakbeat">
+    <rdf:type rdf:resource="http://example.org/music/Genre"/>
+    <rdfs:label xml:lang="uk">Breakbeat</rdfs:label>
+    <schema1:name>Breakbeat</schema1:name>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/music/label_mute">
+    <rdf:type rdf:resource="http://example.org/music/RecordLabel"/>
+    <rdfs:label xml:lang="uk">Mute Records</rdfs:label>
+    <schema1:name>Mute Records</schema1:name>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/music/song_chime">
+    <rdf:type rdf:resource="http://schema.org/MusicRecording"/>
+    <rdfs:label xml:lang="uk">Chime</rdfs:label>
+    <schema1:name>Chime</schema1:name>
+    <ex:performedBy rdf:resource="http://example.org/music/artist_orbital"/>
+    <ex:duration rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">410</ex:duration>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/music/album_exel8">
+    <rdf:type rdf:resource="http://schema.org/MusicAlbum"/>
+    <rdfs:label xml:lang="uk">ex.el8</rdfs:label>
+    <schema1:name>ex.el8</schema1:name>
+    <ex:releasedBy rdf:resource="http://example.org/music/artist_808state"/>
+    <schema1:datePublished rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1991</schema1:datePublished>
+    <ex:hasTrack rdf:resource="http://example.org/music/song_pacman"/>
+    <ex:hasTrack rdf:resource="http://example.org/music/song_cubik"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/music/artist_aphextwin">
+    <rdf:type rdf:resource="http://schema.org/MusicGroup"/>
+    <rdfs:label xml:lang="uk">Aphex Twin</rdfs:label>
+    <schema1:name>Aphex Twin</schema1:name>
+    <ex:hasGenre rdf:resource="http://example.org/music/genre_ambient"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/music/song_koma">
+    <rdf:type rdf:resource="http://schema.org/MusicRecording"/>
+    <rdfs:label xml:lang="uk">Koma</rdfs:label>
+    <schema1:name>Koma</schema1:name>
+    <ex:performedBy rdf:resource="http://example.org/music/artist_plastikman"/>
+    <ex:duration rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">420</ex:duration>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/music/song_cubik">
+    <rdf:type rdf:resource="http://schema.org/MusicRecording"/>
+    <rdfs:label xml:lang="uk">Cubik</rdfs:label>
+    <schema1:name>Cubik</schema1:name>
+    <ex:performedBy rdf:resource="http://example.org/music/artist_808state"/>
+    <ex:duration rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">300</ex:duration>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/music/album_frequencies">
+    <rdf:type rdf:resource="http://schema.org/MusicAlbum"/>
+    <rdfs:label xml:lang="uk">Frequencies</rdfs:label>
+    <schema1:name>Frequencies</schema1:name>
+    <ex:releasedBy rdf:resource="http://example.org/music/artist_lfo"/>
+    <schema1:datePublished rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1991</schema1:datePublished>
+    <ex:recordLabel rdf:resource="http://example.org/music/label_warp"/>
+    <ex:hasTrack rdf:resource="http://example.org/music/song_lfo_track"/>
+    <ex:hasTrack rdf:resource="http://example.org/music/song_mentaldread"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/music/song_lfo_track">
+    <rdf:type rdf:resource="http://schema.org/MusicRecording"/>
+    <rdfs:label xml:lang="uk">LFO</rdfs:label>
+    <schema1:name>LFO</schema1:name>
+    <ex:performedBy rdf:resource="http://example.org/music/artist_lfo"/>
+    <ex:duration rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">316</ex:duration>
+  </rdf:Description>
+</rdf:RDF>

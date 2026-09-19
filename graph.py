@@ -117,3 +117,7 @@ print(f"Кількість екземплярів (URI-ресурсів): {len(a
 
 g.serialize(destination="music.ttl", format="turtle")
 print("Граф збережено у music.ttl")
+
+xml_path = "music.rdf"
+g.serialize(destination=xml_path, format="xml")
+print(f"Граф збережено у другому форматі: {xml_path}")
