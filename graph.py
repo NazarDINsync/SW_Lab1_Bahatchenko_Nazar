@@ -44,7 +44,6 @@ genres = {
     "genre_breakbeat": "Breakbeat",
 }
 genre_uri = {}
-
 for gid, name in genres.items():
     genre_uri[gid] = add_entity(gid, EX.Genre, name)
 
@@ -54,6 +53,36 @@ labels = {
     "label_mute":   "Mute Records",
 }
 label_uri = {}
-
 for lid, name in labels.items():
     label_uri[lid] = add_entity(lid, EX.RecordLabel, name)
+
+artists = {
+    "artist_aphextwin": ("Aphex Twin", "genre_ambient"),
+    "artist_lfo":       ("LFO", "genre_breakbeat"),
+    "artist_orbital":   ("Orbital", "genre_techno"),
+    "artist_808state":  ("808 State", "genre_acidhouse"),
+    "artist_plastikman": ("Plastikman", "genre_techno"), 
+}
+artist_uri = {}
+for aid, (name, gid) in artists.items():
+    uri = add_entity(aid, SCHEMA.MusicGroup, name)
+    g.add((uri, EX.hasGenre, genre_uri[gid]))
+    artist_uri[aid] = uri
+
+albums = [
+    ("album_selectedambient", "Selected Ambient Works 85-92", "artist_aphextwin", 1992, "label_warp"),
+    ("album_frequencies",     "Frequencies",                   "artist_lfo",       1991, "label_warp"),
+    ("album_orbital1",        "Orbital (Green Album)",         "artist_orbital",   1991, "label_rs"),
+    ("album_exel8",           "ex.el8",                        "artist_808state",  1991, None),  # без лейбла навмисно
+]
+
+album_uri = {}
+for alid, title, aid, year, lid in albums:
+    uri = add_entity(alid, SCHEMA.MusicAlbum, title)
+    g.add((uri, EX.releasedBy, artist_uri[aid]))
+    g.add((uri, SCHEMA.datePublished, Literal(year, datatype=XSD.gYear)))
+    if lid is not None:
+        g.add((uri, EX.recordLabel, label_uri[lid]))
+    album_uri[alid] = uri
+
+print(len(g))
