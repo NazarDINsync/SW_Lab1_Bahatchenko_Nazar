@@ -29,3 +29,10 @@ SCHEMA = Namespace("http://schema.org/")
 g = Graph()
 g.bind("ex", EX)
 g.bind("schema", SCHEMA)
+
+def add_entity(local_id, rdf_type, label):
+    uri = EX[local_id]
+    g.add((uri, RDF.type, rdf_type))
+    g.add((uri, RDFS.label, Literal(label, lang="uk")))
+    g.add((uri, SCHEMA.name, Literal(label)))
+    return uri
