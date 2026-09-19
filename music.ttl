@@ -1,0 +1,153 @@
+@prefix ex: <http://example.org/music/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema1: <http://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ex:album_exel8 a schema1:MusicAlbum ;
+    rdfs:label "ex.el8"@uk ;
+    ex:hasTrack ex:song_cubik,
+        ex:song_pacman ;
+    ex:releasedBy ex:artist_808state ;
+    schema1:datePublished "1991"^^xsd:gYear ;
+    schema1:name "ex.el8" .
+
+ex:album_frequencies a schema1:MusicAlbum ;
+    rdfs:label "Frequencies"@uk ;
+    ex:hasTrack ex:song_lfo_track,
+        ex:song_mentaldread ;
+    ex:recordLabel ex:label_warp ;
+    ex:releasedBy ex:artist_lfo ;
+    schema1:datePublished "1991"^^xsd:gYear ;
+    schema1:name "Frequencies" .
+
+ex:album_orbital1 a schema1:MusicAlbum ;
+    rdfs:label "Orbital (Green Album)"@uk ;
+    ex:hasTrack ex:song_chime,
+        ex:song_midnight ;
+    ex:recordLabel ex:label_rs ;
+    ex:releasedBy ex:artist_orbital ;
+    schema1:datePublished "1991"^^xsd:gYear ;
+    schema1:name "Orbital (Green Album)" .
+
+ex:album_selectedambient a schema1:MusicAlbum ;
+    rdfs:label "Selected Ambient Works 85-92"@uk ;
+    ex:hasTrack ex:song_tha,
+        ex:song_xtalcal ;
+    ex:recordLabel ex:label_warp ;
+    ex:releasedBy ex:artist_aphextwin ;
+    schema1:datePublished "1992"^^xsd:gYear ;
+    schema1:name "Selected Ambient Works 85-92" .
+
+ex:label_mute a ex:RecordLabel ;
+    rdfs:label "Mute Records"@uk ;
+    schema1:name "Mute Records" .
+
+ex:song_koma a schema1:MusicRecording ;
+    rdfs:label "Koma"@uk ;
+    ex:duration 420 ;
+    ex:performedBy ex:artist_plastikman ;
+    schema1:name "Koma" .
+
+ex:song_spastik a schema1:MusicRecording ;
+    rdfs:label "Spastik"@uk ;
+    ex:duration 391 ;
+    ex:performedBy ex:artist_plastikman ;
+    schema1:name "Spastik" .
+
+ex:genre_acidhouse a ex:Genre ;
+    rdfs:label "Acid House"@uk ;
+    schema1:name "Acid House" .
+
+ex:genre_ambient a ex:Genre ;
+    rdfs:label "Ambient"@uk ;
+    schema1:name "Ambient" .
+
+ex:genre_breakbeat a ex:Genre ;
+    rdfs:label "Breakbeat"@uk ;
+    schema1:name "Breakbeat" .
+
+ex:label_rs a ex:RecordLabel ;
+    rdfs:label "R&S Records"@uk ;
+    schema1:name "R&S Records" .
+
+ex:song_chime a schema1:MusicRecording ;
+    rdfs:label "Chime"@uk ;
+    ex:duration 410 ;
+    ex:performedBy ex:artist_orbital ;
+    schema1:name "Chime" .
+
+ex:song_cubik a schema1:MusicRecording ;
+    rdfs:label "Cubik"@uk ;
+    ex:duration 300 ;
+    ex:performedBy ex:artist_808state ;
+    schema1:name "Cubik" .
+
+ex:song_lfo_track a schema1:MusicRecording ;
+    rdfs:label "LFO"@uk ;
+    ex:duration 316 ;
+    ex:performedBy ex:artist_lfo ;
+    schema1:name "LFO" .
+
+ex:song_mentaldread a schema1:MusicRecording ;
+    rdfs:label "Mental Dread"@uk ;
+    ex:duration 248 ;
+    ex:performedBy ex:artist_lfo ;
+    schema1:name "Mental Dread" .
+
+ex:song_midnight a schema1:MusicRecording ;
+    rdfs:label "Midnight"@uk ;
+    ex:duration 362 ;
+    ex:performedBy ex:artist_orbital ;
+    schema1:name "Midnight" .
+
+ex:song_pacman a schema1:MusicRecording ;
+    rdfs:label "Pacman"@uk ;
+    ex:duration 265 ;
+    ex:performedBy ex:artist_808state ;
+    schema1:name "Pacman" .
+
+ex:song_tha a schema1:MusicRecording ;
+    rdfs:label "Tha"@uk ;
+    ex:duration 574 ;
+    ex:performedBy ex:artist_aphextwin ;
+    schema1:name "Tha" .
+
+ex:song_xtalcal a schema1:MusicRecording ;
+    rdfs:label "Xtal"@uk ;
+    ex:duration 268 ;
+    ex:performedBy ex:artist_aphextwin ;
+    schema1:name "Xtal" .
+
+ex:artist_plastikman a schema1:MusicGroup ;
+    rdfs:label "Plastikman"@uk ;
+    ex:hasGenre ex:genre_techno ;
+    schema1:name "Plastikman" .
+
+ex:genre_techno a ex:Genre ;
+    rdfs:label "Techno"@uk ;
+    schema1:name "Techno" .
+
+ex:label_warp a ex:RecordLabel ;
+    rdfs:label "Warp Records"@uk ;
+    schema1:name "Warp Records" .
+
+ex:artist_808state a schema1:MusicGroup ;
+    rdfs:label "808 State"@uk ;
+    ex:hasGenre ex:genre_acidhouse ;
+    schema1:name "808 State" .
+
+ex:artist_aphextwin a schema1:MusicGroup ;
+    rdfs:label "Aphex Twin"@uk ;
+    ex:hasGenre ex:genre_ambient ;
+    schema1:name "Aphex Twin" .
+
+ex:artist_lfo a schema1:MusicGroup ;
+    rdfs:label "LFO"@uk ;
+    ex:hasGenre ex:genre_breakbeat ;
+    schema1:name "LFO" .
+
+ex:artist_orbital a schema1:MusicGroup ;
+    rdfs:label "Orbital"@uk ;
+    ex:hasGenre ex:genre_techno ;
+    schema1:name "Orbital" .
+

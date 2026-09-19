@@ -104,3 +104,16 @@ for sid, title, aid, alid, duration in songs:
     g.add((uri, EX.duration, Literal(duration, datatype=XSD.integer)))
     if alid is not None:
         g.add((album_uri[alid], EX.hasTrack, uri))
+
+print(f"Кількість трійок: {len(g)}")
+
+entity_types = set(g.objects(None, RDF.type))
+print(f"Кількість типів сутностей: {len(entity_types)}")
+for t in entity_types:
+    print(f"  - {t}")
+
+all_resources = set(g.subjects()) | {o for o in g.objects() if isinstance(o, URIRef)}
+print(f"Кількість екземплярів (URI-ресурсів): {len(all_resources)}")
+
+g.serialize(destination="music.ttl", format="turtle")
+print("Граф збережено у music.ttl")
