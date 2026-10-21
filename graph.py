@@ -74,6 +74,7 @@ albums = [
     ("album_frequencies",     "Frequencies",                   "artist_lfo",       1991, "label_warp"),
     ("album_orbital1",        "Orbital (Green Album)",         "artist_orbital",   1991, "label_rs"),
     ("album_exel8",           "ex.el8",                        "artist_808state",  1991, None),  # без лейбла навмисно
+    ("album_rdjalbum",        "Richard D. James Album",        "artist_aphextwin", 1996, "label_warp"),  # 2-й альбом Aphex Twin (для Q3)
 ]
 
 album_uri = {}
@@ -94,7 +95,9 @@ songs = [
     ("song_midnight",      "Midnight",          "artist_orbital",   "album_orbital1",         362),
     ("song_pacman",        "Pacman",            "artist_808state",  "album_exel8",            265),
     ("song_cubik",         "Cubik",             "artist_808state",  "album_exel8",            300),
-    ("song_spastik",       "Spastik",           "artist_plastikman", None, 391),   # сингл, без альбому
+    ("song_fourtrack",     "4",                 "artist_aphextwin", "album_rdjalbum",         217),
+    ("song_girlboy",       "Girl/Boy Song",     "artist_aphextwin", "album_rdjalbum",         244),
+    ("song_spastik",       "Spastik",          "artist_plastikman", None, 391),   # сингл, без альбому
     ("song_koma",          "Koma",              "artist_plastikman", None, 420),   # сингл, без альбому
 ]
 

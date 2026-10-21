@@ -29,6 +29,15 @@ ex:album_orbital1 a schema1:MusicAlbum ;
     schema1:datePublished "1991"^^xsd:gYear ;
     schema1:name "Orbital (Green Album)" .
 
+ex:album_rdjalbum a schema1:MusicAlbum ;
+    rdfs:label "Richard D. James Album"@uk ;
+    ex:hasTrack ex:song_fourtrack,
+        ex:song_girlboy ;
+    ex:recordLabel ex:label_warp ;
+    ex:releasedBy ex:artist_aphextwin ;
+    schema1:datePublished "1996"^^xsd:gYear ;
+    schema1:name "Richard D. James Album" .
+
 ex:album_selectedambient a schema1:MusicAlbum ;
     rdfs:label "Selected Ambient Works 85-92"@uk ;
     ex:hasTrack ex:song_tha,
@@ -82,6 +91,18 @@ ex:song_cubik a schema1:MusicRecording ;
     ex:performedBy ex:artist_808state ;
     schema1:name "Cubik" .
 
+ex:song_fourtrack a schema1:MusicRecording ;
+    rdfs:label "4"@uk ;
+    ex:duration 217 ;
+    ex:performedBy ex:artist_aphextwin ;
+    schema1:name "4" .
+
+ex:song_girlboy a schema1:MusicRecording ;
+    rdfs:label "Girl/Boy Song"@uk ;
+    ex:duration 244 ;
+    ex:performedBy ex:artist_aphextwin ;
+    schema1:name "Girl/Boy Song" .
+
 ex:song_lfo_track a schema1:MusicRecording ;
     rdfs:label "LFO"@uk ;
     ex:duration 316 ;
@@ -127,19 +148,10 @@ ex:genre_techno a ex:Genre ;
     rdfs:label "Techno"@uk ;
     schema1:name "Techno" .
 
-ex:label_warp a ex:RecordLabel ;
-    rdfs:label "Warp Records"@uk ;
-    schema1:name "Warp Records" .
-
 ex:artist_808state a schema1:MusicGroup ;
     rdfs:label "808 State"@uk ;
     ex:hasGenre ex:genre_acidhouse ;
     schema1:name "808 State" .
-
-ex:artist_aphextwin a schema1:MusicGroup ;
-    rdfs:label "Aphex Twin"@uk ;
-    ex:hasGenre ex:genre_ambient ;
-    schema1:name "Aphex Twin" .
 
 ex:artist_lfo a schema1:MusicGroup ;
     rdfs:label "LFO"@uk ;
@@ -150,4 +162,13 @@ ex:artist_orbital a schema1:MusicGroup ;
     rdfs:label "Orbital"@uk ;
     ex:hasGenre ex:genre_techno ;
     schema1:name "Orbital" .
+
+ex:label_warp a ex:RecordLabel ;
+    rdfs:label "Warp Records"@uk ;
+    schema1:name "Warp Records" .
+
+ex:artist_aphextwin a schema1:MusicGroup ;
+    rdfs:label "Aphex Twin"@uk ;
+    ex:hasGenre ex:genre_ambient ;
+    schema1:name "Aphex Twin" .
 
