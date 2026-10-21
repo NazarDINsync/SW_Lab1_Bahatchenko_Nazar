@@ -1,0 +1,34 @@
+@prefix dbo: <http://dbpedia.org/ontology/> .
+@prefix dbr: <http://dbpedia.org/resource/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+dbr:808_State rdfs:label "808 State"@en ;
+    dbo:activeYearsStartYear "1987"^^xsd:gYear ;
+    dbo:genre dbr:Acid_house,
+        dbr:Electronic_music,
+        dbr:Madchester,
+        dbr:Techno ;
+    dbo:recordLabel dbr:Circus_Records,
+        dbr:Rephlex_Records,
+        dbr:Shadow_Records,
+        dbr:Tommy_Boy_Records,
+        dbr:Warner_Records,
+        dbr:ZTT_Records .
+
+dbr:Aphex_Twin rdfs:label "Aphex Twin"@en ;
+    dbo:activeYearsStartYear "1988"^^xsd:gYear ;
+    dbo:birthDate "1971-08-18"^^xsd:date ;
+    dbo:genre dbr:Acid_\(electronic_music\),
+        dbr:Ambient_techno,
+        <http://dbpedia.org/resource/Drill_'n'_bass>,
+        dbr:Electronic_music,
+        dbr:Experimental_music,
+        dbr:Intelligent_dance_music,
+        dbr:Jungle_music,
+        dbr:Techno ;
+    dbo:recordLabel dbr:Apollo_Records_\(Belgium\),
+        <http://dbpedia.org/resource/R&S_Records>,
+        dbr:Rephlex_Records,
+        dbr:Warp_Records .
+
