@@ -3,7 +3,7 @@
 
 5 питань:
 1. Композиції певного альбому (join + ORDER BY)
-2. Альбоми 2015-2022 (FILTER)
+2. Альбоми 1991-1992 (FILTER)
 3. Виконавець з найбільшою к-тю альбомів (COUNT)
 4. Середня тривалість пісень по жанру (AVG, 3 хопи: Song->Album->Artist->Genre)
 5. Виконавці без альбомів, лише сингли (FILTER NOT EXISTS)
@@ -121,3 +121,41 @@ print("Граф збережено у music.ttl")
 xml_path = "music.rdf"
 g.serialize(destination=xml_path, format="xml")
 print(f"Граф збережено у другому форматі: {xml_path}")
+
+def print_header(title):
+    print(f"\n{'=' * 70}")
+    print(f" {title}")
+    print(f"{'=' * 70}")
+
+def short(uri):
+    """Скорочує повний URI до 'префікс:локальна_частина' для читабельності."""
+    s = str(uri)
+    if s.startswith(str(EX)):
+        return "ex:" + s[len(str(EX)):]
+    if s.startswith(str(SCHEMA)):
+        return "schema:" + s[len(str(SCHEMA)):]
+    if s.startswith(str(RDFS)):
+        return "rdfs:" + s[len(str(RDFS)):]
+    if s.startswith(str(RDF)):
+        return "rdf:" + s[len(str(RDF)):]
+    return s
+
+print_header("Перші 10 трійок графа")
+for i, (s, p, o) in enumerate(g):
+    if i >= 10:
+        break
+    print(f"  {short(s):<28} {short(p):<20} {short(o)}")
+    
+target = EX.artist_aphextwin
+
+print_header(f"Трійки, пов'язані з {short(target)}")
+
+print("\n-- Як суб'єкт (властивості цієї сутності) --")
+for p, o in g.predicate_objects(subject=target):
+    print(f"  {short(target):<20} --{short(p):<18}--> {short(o)}")
+
+print("\n-- Як об'єкт (хто на неї посилається) --")
+for s, p in g.subject_predicates(object=target):
+    print(f"  {short(s):<20} --{short(p):<18}--> {short(target)}")
+
+print()
