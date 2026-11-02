@@ -20,10 +20,14 @@
 - ex:recordLabel    Album -> RecordLabel (не в усіх альбомів)
 """
 
+from pathlib import Path
+
 from rdflib import Graph, Namespace, Literal, RDF, RDFS, URIRef
 from rdflib.namespace import XSD
 
-EX = Namespace("http://example.org/music/")   
+HERE = Path(__file__).resolve().parent
+
+EX = Namespace("http://example.org/music/")
 SCHEMA = Namespace("http://schema.org/")
 
 g = Graph()
@@ -118,10 +122,10 @@ for t in entity_types:
 all_resources = set(g.subjects()) | {o for o in g.objects() if isinstance(o, URIRef)}
 print(f"Кількість екземплярів (URI-ресурсів): {len(all_resources)}")
 
-g.serialize(destination="music.ttl", format="turtle")
+g.serialize(destination=str(HERE / "music.ttl"), format="turtle")
 print("Граф збережено у music.ttl")
 
-xml_path = "music.rdf"
+xml_path = HERE / "music.rdf"
 g.serialize(destination=xml_path, format="xml")
 print(f"Граф збережено у другому форматі: {xml_path}")
 
@@ -131,7 +135,6 @@ def print_header(title):
     print(f"{'=' * 70}")
 
 def short(uri):
-    """Скорочує повний URI до 'префікс:локальна_частина' для читабельності."""
     s = str(uri)
     if s.startswith(str(EX)):
         return "ex:" + s[len(str(EX)):]

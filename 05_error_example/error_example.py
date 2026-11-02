@@ -9,10 +9,15 @@ SPARQL не вважає це синтаксичною помилкою: шаб�
 з даними, тому запит повертає ПОРОЖНІЙ результат без жодного повідомлення.
 """
 
+from pathlib import Path
+
 from rdflib import Graph
 
+HERE = Path(__file__).resolve().parent
+MUSIC_TTL = HERE.parent / "01_graph" / "music.ttl"
+
 g = Graph()
-g.parse("music.ttl", format="turtle")
+g.parse(MUSIC_TTL, format="turtle")
 
 PREFIXES = """\
 PREFIX ex:     <http://example.org/music/>

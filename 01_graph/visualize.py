@@ -7,6 +7,7 @@
 """
 
 import textwrap
+from pathlib import Path
 
 import matplotlib
 matplotlib.use("Agg")
@@ -16,11 +17,13 @@ import networkx as nx
 from matplotlib.lines import Line2D
 from rdflib import Graph, Namespace, RDF, URIRef
 
+HERE = Path(__file__).resolve().parent
+
 EX = Namespace("http://example.org/music/")
 SCHEMA = Namespace("http://schema.org/")
 
 g = Graph()
-g.parse("music.ttl", format="turtle")
+g.parse(HERE / "music.ttl", format="turtle")
 
 # клас -> (підпис у легенді, колір, форма вузла, розмір)
 CLASSES = {
@@ -159,5 +162,5 @@ ax.set_xlim(-1.5, 3.5)
 ax.margins(y=0.04)
 ax.axis("off")
 fig.tight_layout()
-fig.savefig("graph.png", facecolor=SURFACE)
+fig.savefig(HERE / "graph.png", facecolor=SURFACE)
 print("Зображення збережено у graph.png")

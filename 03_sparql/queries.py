@@ -1,17 +1,14 @@
-"""
-SPARQL-запити до графа music.ttl (предметна область: Музика).
+"""SPARQL-запити Q1-Q5 до графа music.ttl (предметна область: Музика)."""
 
-1. Композиції альбому (зв'язок Album -> Song, ORDER BY)
-2. Альбоми 1991-1992 (FILTER)
-3. Виконавець(ці) з найбільшою кількістю альбомів (COUNT, підзапит з MAX)
-4. Середня тривалість пісень по жанру (AVG, 3 хопи: Song <- Album -> Artist -> Genre)
-5. Виконавці без альбомів, лише сингли (FILTER NOT EXISTS)
-"""
+from pathlib import Path
 
 from rdflib import Graph
 
+HERE = Path(__file__).resolve().parent
+MUSIC_TTL = HERE.parent / "01_graph" / "music.ttl"
+
 g = Graph()
-g.parse("music.ttl", format="turtle")
+g.parse(MUSIC_TTL, format="turtle")
 
 PREFIXES = """\
 PREFIX ex:     <http://example.org/music/>
@@ -103,7 +100,6 @@ ORDER BY ?artistName ?title
 
 
 def print_table(result):
-    """Друкує результат SELECT-запиту як вирівняну таблицю."""
     headers = [str(v) for v in result.vars]
     rows = [[str(cell) if cell is not None else "" for cell in row] for row in result]
     widths = [max(len(h), *(len(r[i]) for r in rows)) if rows else len(h)
